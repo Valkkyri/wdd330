@@ -17,11 +17,11 @@
         }
     </style>
     <script>
-        function loadStory() {
+        function loadStory() { // This section does not work! See notes line 16
             let storyName = document.querySelector("#storyName_input").value;
             let storyHTML = localStorage.getItem(storyName);
             document.querySelector("#story_editor").value = storyHTML;
-            console.log(storyHTML);
+            console.log(storyHTML); // Returns null
         }
         function saveStory() {
             let storyName = document.querySelector("#storyName_input").value;
