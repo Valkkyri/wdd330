@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Writer</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <style>
+        textarea {
+            width: 40em;
+            height: 10em;
+        }
+        section {
+            margin: 1em 0;
+        }
+    </style>
+    <script>
+        function loadStory() {
+            let storyName = document.querySelector("#storyName_input").value;
+            let storyHTML = localStorage.getItem(storyName);
+            document.querySelector("#story_editor").value = storyHTML;
+            console.log(storyHTML);
+        }
+        function saveStory() {
+            let storyName = document.querySelector("#storyName_input").value;
+            let storyHTML = document.querySelector("#story_editor").value;
+            localStorage.getItem(storyName, storyHTML);
+            console.log(storyName, storyHTML);
+        }
+        function showStory() {
+            let storyHTML = document.querySelector("#story_editor").value;
+            document.querySelector("#story_display").innerHTML = storyHTML;
+        }
+    </script>
+</head>
+<body>
+    <!-- Key -->
+    <p>Story Name: <input type="text" id="storyName_input" /></p>
+    <section>
+        <button onclick="loadStory()">Find and Edit Story</button>
+        <button onclick="saveStory()">Save Your Story</button>
+        <button onclick="showStory()">View Your Story</button>
+    </section>    
+    <!-- Value -->
+    <textarea id="story_editor" placeholder="Write your story here..."></textarea>
+    <!-- Key and Value pair displayed -->
+    <section id="story_display"></section>
+    
+</body>
+</html>
