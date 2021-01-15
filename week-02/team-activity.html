@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 - Code | Melissa Gamble</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+        I wasn't super happy with how my team decided to interpret the instructions, so based on that
+        and seeing what the solution actually looked like, I wanted to re-do the assignment. Though, 
+        It's more work and I'm running out of steam, so it probably won't be completed. Blah. :p -_-
+     -->
+    <h1>Week Two Team Activity</h1>
+    <section>
+        <h2>Core Requirement 1</h2>
+        <input type="text" id="cr1Number">
+        <button onclick="cr1Fun()">Enter a Number</button>
+        <div id="cr1Output"></div>
+    </section>
+
+    <section>
+        <h2>Core Requirement 2</h2>
+        <input type="text" id="cr2Number">
+        <button onclick="cr2Fun()">Sum the Num</button>
+        <div id="cr2Output"></div>
+    </section>
+
+    <section>
+        <h2>Core Requirement 3</h2>
+        <input type="text" id="cr3FirstNumber"> + <input type="text" id="cr3SecondNumber">
+        <button onclick="cr3Fun()">Do Addition!</button>
+        <div id="cr3Output"></div>
+    </section>
+
+    <!-- <section>
+        <h2>Stretch Challenge</h2>
+        <p>Let's take it to the next level...</p>
+        <input type="text" id="scNumber1">
+        <input type="text" id="scNumber2">
+        <button onclick="">+</button>
+        <button onclick="">-</button>
+        <button onclick="">*</button>
+    </section> -->
+    <script>
+        // CORE REQUIREMENTS
+        // Take the user input, convert it to a number and display it on screen.
+        function cr1Fun() {
+            let cr1Number = parseFloat(document.querySelector("#cr1Number").value);
+            document.querySelector("#cr1Output").innerHTML = `You entered: ${cr1Number}`;
+        }
+        // Take the user input, convert it to a number, sum all the number up to the user input number. Display the sum on screen.
+        function cr2Fun() {
+            let cr2Number = parseFloat(document.querySelector("#cr2Number").value);
+            let sum = 0;
+            for (let i = 0; i <= cr2Number; i++) {
+                sum += i;
+            }
+            document.querySelector("#cr2Output").innerHTML = `We can count AND add! Your sum is: ${sum}`;
+        }
+        // Take the two user inputs and convert them to numbers, add those two numbers and display on screen.
+        function cr3Fun() {
+            let cr3FirstNumber = parseFloat(document.querySelector("#cr3FirstNumber").value);
+            let cr3SecondNumber = parseFloat(document.querySelector("#cr3SecondNumber").value);
+            let sum = cr3FirstNumber + cr3SecondNumber;
+            document.querySelector("#cr3Output").innerHTML = `We can add! ${cr3FirstNumber} + ${cr3SecondNumber} = ${sum}`;
+        }
+        // STRETCH CHALLENGE -- NOT GONNA HAPPEN, I'M OUT OF JUICE...
+        // THOUGH, I didn't technically repeat any code, so that's one stretch challenge completed.        
+    </script>
+</body>
+</html>

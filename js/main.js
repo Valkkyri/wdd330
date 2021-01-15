@@ -3,6 +3,10 @@ let links = [
     {
         label: "Week 01",
         url: "week-01/index.html"
+    },
+    {
+        label: "Week 02",
+        url: "week-02/index.html"
     }
 ];
 console.log(links);
