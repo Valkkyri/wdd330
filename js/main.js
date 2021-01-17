@@ -9,7 +9,7 @@ let links = [
         url: "week-02/index.html"
     }
 ];
-console.log(links);
+// console.log(links);
 
 for (let i = 0; i < links.length; i++)  {
     let li = document.createElement("li");

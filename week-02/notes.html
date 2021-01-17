@@ -66,6 +66,134 @@
     </p>
 
     <h3>Chapter 3 - Arrays, Logic, and Loops</h3>
+    <p>
+        Note: I did a lot of reading for this chapter on my kindle, and not a lot of stuff needed
+        notes (except for this note).
+    </p>
+    <p>
+        <strong>Nested for Loops</strong>: "You can place a loop inside another loop to create a nested loop.
+        It will have an inner loop that will run all the way through before the next step of the outer loop occurs."
+    </p>
+    <p>
+        <code>
+            for(let i=1 ; j&lt;13 ; i++){<br>
+                for(let i=1 ; j&lt;13 ; j++){<br>
+                    console.log(`${j} multiplied by ${i} is ${i*j}`);<br>
+                    }<br>
+                }
+        </code>
+    </p>
+    <p>
+        "The outer loop counts up from <code>i=1</code> to <code>i=12</code> . For every iteration of
+        the outer loop, the inner loop counts up from <code>j=1</code> to <code>j=12</code>.
+        This means that it starts in the first iteration with <code>i = 1</code> and <code>j = 1</code>,
+        producing the following output that is logged to the console:
+        <code>&lt;&lt; 1 multiplied by 1 is 1</code>"
+    </p>
+    <p class="highlight">
+        "<code>j</code> continues to increase until it reaches 12. After this, we leave the inner loop
+        and return to the outer loop, where <code>i</code> increases to 2. We then re-enter the inner
+        loop and <code>j</code> is reset back to 1 and begins counting up to 12 again.
+        This continues until the last iteration produces the line:
+        <code>&lt;&lt; 12 multiplied by 12 is 144</code>"
+    </p>
+    <p><a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/3/k01nwtld?fromShare=true" target="_blank">
+        Use a variable to precalculate the length of a list (Array) in a for loop so that it doesn't
+        have to be calculated every time the loop runs. This will save speed in the long run,
+        especially for large Arrays.
+    </a></p>
+
+    <h3>Chapter 4 - Functions</h3>
+    <p>
+        "<strong>Keep Your Code DRY:</strong> Don’t Repeat Yourself,or DRY, is a principle of programming
+        that specifies that every part of a program should only be written once. This avoids duplication
+        and means there’s no need to keep multiple pieces of code up to date and in sync."
+    </p>
+    <p class="highlight">
+        "<strong>Parameters</strong> and <strong>arguments</strong> are terms that are often used
+        interchangeably to represent values provided for the function as an input. There is a subtle
+        difference though: any parameters a function needs are set when the function is <em>defined</em>.
+        When a function is <em>invoked</em>, it is provided with arguments."<br>
+        <strong>DEFINE (parameters):</strong> When we write the function.<br>
+        <strong>INVOKE (arguments):</strong> When we call the function, or tell it to DO something.
+    </p>
+    <p>
+        <strong>Default Parameters:</strong> "The golden rule to remember here is to always put default parameters <i>after</i> all the other parameters."
+    </p>
+    <h4><a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/4/k01nwtp9?fromShare=true" target="_blank">
+        Arrow Functions
+    </a></h4>
+    <p>"Arrow functions can be identified by the 'arrow' symbol, <code>=></code> that gives them their name.
+        The parameters come before the arrow and the main body of the function comes after. Arrow functions
+        are always anonymous, so if you want to refer to them, you must assign them to a variable." 
+        (See example/notes below.)
+    </p>
+    <p>
+        <code>const square = x => x*x;</code> OR <code>const add = (x,y) => x + y;</code><br>
+        <code>parameter => function;</code> OR <code>(param1, param2) => function</code><br>
+        NOTE: "const square =" is the variable we are assigning the arrow function to.
+        Also, a single parameter does not need to go inside parentheses, only multiple
+        parameters need to go inside parentheses. "If the function doesn't require any parameters,
+        a pair of empty parentheses must go before the arrow."<br>
+        <code>const hello = () => alert('Hello World!');</code>
+    </p>
+    <p>
+        Single line Arrow Functions don't need to go inside a block or explicitly use the
+        <code>return</code> keyword. Longer Arrow Functions still need curly braces and to go inside
+        a block, as well as using the <code>return</code> keyword.
+    </p>
+    <p>
+        "A number of the benefits are lost, once the function body becomes longer than one line.<br>
+        Arrow functions make perfect candidates for short, anonymous functions, and you will often
+        see them used later in the book."
+    </p>
+    <hr>
+    <p>The main thing about using functions is to be consistent with the method you use. I personally
+        prefer Function Declaration, so that's what I'm going to stick with (except in those instances
+        where the Arrow Function is the best option for the job).<br>
+        <code>function declaration() { code block }</code>
+    </p>
+    <p>
+        <strong><a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/4/k01nwtq1?fromShare=true" target="_blank">
+            Callbacks
+        </a></strong>: "Functions can ... be given as a parameter to another function.
+        A function that is passed as an argument to another is known as a <i>callback</i>."
+    </p>
+    <p>"Here’s a basic example of a function called <code>sing()</code>, which accepts the name of a song:</p>
+    <p>
+        <code>
+            function sing(song) {<br>
+                console.log(`I'm singing along to ${song}`);<br>
+            }<br>
+            sing('Let It Go')<br>
+            &lt;&lt; 'I'm singing along to Let It Go'
+        </code>
+    </p>
+    <p>We can make the <code>sing()</code> function more flexible by adding a callback parameter:</p>
+    <p>
+        <code>
+            function sing(song,callback) {<br>
+                console.log(`I'm singing along to ${song}.`);<br>
+                callback();<br>
+            }
+        </code>
+    </p>
+    <p>The callback is provided as a parameter, then invoked inside the body of the function."</p>
+    <p><a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/4/k01nwtqj?fromShare=true" target="_blank">
+        Sorting Arrays With A Callback</a>: I do not get this at all. I mean, I get the callback, but I 
+        sure don't understand how that function works.
+    </p>
+    <p><em>(Short Arrow Functions are very useful as Callbacks)</em></p>
+    <p><strong>Map Method Callback:</strong> In this instance, we usually only reference the first parameter,
+        the ITEM in the array, but there are two more parameters that can be called. INDEX NUMBER and the ARRAY itself.<br>
+       <strong>SO:</strong>
+    </p>
+    <ol>
+        <li><strong>Item</strong> in the array.</li>
+        <li><strong>Index Number</strong> of the array.</li>
+        <li><strong>The Array</strong> itself.</li>
+    </ol>
+    <p><strong><a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/4/k01nwtrr?fromShare=true" target="_blank">Filter() Method</a></strong></p>
     
     <p><a href="index.html">BACK</a></p>
 </body>
